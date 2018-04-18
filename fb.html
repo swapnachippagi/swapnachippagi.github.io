@@ -1,0 +1,68 @@
+<html>
+<head></head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+<script>
+
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyChhEuk9RDu6feqbYba70uybMNb6rPjrQw",
+    authDomain: "cricko-f7114.firebaseapp.com",
+    databaseURL: "https://cricko-f7114.firebaseio.com",
+    projectId: "cricko-f7114",
+    storageBucket: "",
+    messagingSenderId: "21538415709"
+  };
+  firebase.initializeApp(config);
+  var provider = new firebase.auth.GoogleAuthProvider();
+    
+   $(document).ready(function(){
+   
+   $("#sig").click(function(){
+				console.log("f");
+		   firebase.auth().signInWithPopup(provider).then(function(result) {
+		  // This gives you a Google Access Token. You can use it to access the Google API.
+		  var token = result.credential.accessToken;
+		  // The signed-in user info.
+		  var user = result.user;
+		  console.log(user.displayName);
+		  
+		  // ...
+		}).catch(function(error) {
+		
+		
+		console.log(error);
+		  // Handle Errors here.
+		  var errorCode = error.code;
+		  var errorMessage = error.message;
+		  // The email of the user's account used.
+		  var email = error.email;
+		  // The firebase.auth.AuthCredential type that was used.
+		  var credential = error.credential;
+		  // ...
+		});
+   
+   
+   
+   
+   });
+   
+   });
+   
+   
+   
+   
+</script>
+
+<button id="sig">sign</button>
+</body>
+</html>
