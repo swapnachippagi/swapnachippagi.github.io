@@ -1,92 +1,111 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../../../favicon.ico">
 
-    <title>Sticky Footer Template for Bootstrap</title>
+<title>Sticky Footer Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="https://getbootstrap.com/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.com/docs/4.1/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
-    
-    
+<!-- Custom styles for this template -->
+<link
+	href="https://getbootstrap.com/docs/4.1/examples/sticky-footer/sticky-footer.css"
+	rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
+<script
+	src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+<script
+	src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+<script
+	src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>  
-    <script>
-	    $(document).ready(function({ 
-		    
-       var config = {
-    apiKey: "AIzaSyChhEuk9RDu6feqbYba70uybMNb6rPjrQw",
-    authDomain: "cricko-f7114.firebaseapp.com",
-    databaseURL: "https://cricko-f7114.firebaseio.com",
-    projectId: "cricko-f7114",
-    storageBucket: "",
-    messagingSenderId: "21538415709"
-  };
-  firebase.initializeApp(config);
-  var provider = new firebase.auth.GoogleAuthProvider();
-    
-    
-  firebase.auth().onAuthStateChanged(function(user) {
-	  if (user) {
-	    // User is signed in.
-	    console.log("user logged");
-	   /*  $("#SO").show();
-	    $("#sig").hide(); */
-	    //redirect to home
-	    //window.location.href = "home.html";
-	    
-	    
-	  } else {
-	    // No user is signed in.
-		  console.log("user logged not");
-		  window.location.href = "index.html";
-		  
-	  }
-	});
-      
-	   $("#SO").click(function(){
+<script
+	src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+<script>
+
+
+$(document).ready(function(){
+	
+   $("#SO").click(function(){
+		   
+		   console.log("clicked logout");
 		   
 		   firebase.auth().signOut().then(function() {
 			   // Sign-out successful.
 			   console.log("signed out");
+			   window.location.href = "index.html";
 			 }).catch(function(error) {
 			   // An error happened.
 			   console.log(error);
-			 });
+			 }); 
 	   });
-	 }));    
+	
+});   
     </script>
     
+    <script type="text/javascript">
+    var config = {
+    	    apiKey: "AIzaSyChhEuk9RDu6feqbYba70uybMNb6rPjrQw",
+    	    authDomain: "cricko-f7114.firebaseapp.com",
+    	    databaseURL: "https://cricko-f7114.firebaseio.com",
+    	    projectId: "cricko-f7114",
+    	    storageBucket: "",
+    	    messagingSenderId: "21538415709"
+    	  };
+    	  firebase.initializeApp(config);
+    	  var provider = new firebase.auth.GoogleAuthProvider();
+    	    
+    	    
+    	  firebase.auth().onAuthStateChanged(function(user) {
+    		  if (user) {
+    		    // User is signed in.
+    		    console.log("user logged");
+    		   /*  $("#SO").show();
+    		    $("#sig").hide(); */
+    		    //redirect to home
+    		    //window.location.href = "home.html";
+    		    
+    		    
+    		  } else {
+    		    // No user is signed in.
+    			  console.log("user logged not");
+    			  window.location.href = "index.html";
+    			  
+    		  }
+    		});
+    	      
     
-  </head>
+    </script>
 
-  <body>
 
-    <!-- Begin page content -->
-    <main role="main" class="container">
-       <button id="SO" class="btn btn-lg btn-primary btn-block" type="submit">Sign Out</button>
-      <h1 class="mt-5">Sticky footer</h1>
-      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p>
-      <p>Use <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
-      </div>
-    </footer>
-  </body>
+</head>
+<body>
+	<!-- Begin page content -->
+	<main role="main" class="container">
+	<button id="SO" class="btn btn-lg btn-primary btn-block" type="submit">Sign
+		Out</button>
+	<h1 class="mt-5">Sticky footer</h1>
+	<p class="lead">Pin a fixed-height footer to the bottom of the
+		viewport in desktop browsers with this custom HTML and CSS.</p>
+	<p>
+		Use <a href="../sticky-footer-navbar">the sticky footer with a
+			fixed navbar</a> if need be, too.
+	</p>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<span class="text-muted">Place sticky footer content here.</span>
+		</div>
+	</footer>
+</body>
 </html>
