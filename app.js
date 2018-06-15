@@ -1,5 +1,5 @@
 var api = sc2.Initialize({
-  app: 'busy.app',
-  callbackURL: 'https://steemit.github.io/example-steemconnect-angular',
+  app: 'steemkar',
+  callbackURL: 'https://swapnachippagi.github.io/index.html',
   scope: ['vote', 'comment']
 });
