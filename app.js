@@ -1,3 +1,4 @@
+var sc2 = require('sc2-sdk');
 var api = sc2.Initialize({
   app: 'steemkar',
   callbackURL: 'https://swapnachippagi.github.io/index.html',
