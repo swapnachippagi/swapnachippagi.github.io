@@ -15,7 +15,7 @@ var api = sc2.Initialize({
   scope: ['vote', 'comment']
 });
 
-var link = api.getLoginURL(state);
+var link = api.getLoginURL();
 console.log(link)
 
 
